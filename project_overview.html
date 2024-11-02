@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Overview</title>
+    <link rel="stylesheet" href="project_overview.css"> <!-- Link to any additional CSS -->
+    
+        
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="container">
+            <div class="logo">
+                <a href="CP.HTML">Major Project Management</a>
+            </div>
+
+            <!-- Hamburger Menu for Mobile -->
+            <button class="hamburger" onclick="toggleMenu()">&#9776;</button>
+
+            <!-- Desktop Navigation Links -->
+            <ul class="nav-links">
+                <li><a href="timelines.html">Timelines</a></li>
+                <li><a href="domain.html">Domain</a></li>
+                <li><a href="display_projects.php">All Projects</a></li>
+                <li><a href="project.html">Project</a></li>
+                <li><a href='groupmate_data.html'>Group Mate Data</a></li>
+             
+            </ul>
+
+            <!-- Mobile Navigation Links -->
+            <ul class="nav-links-mobile">
+                <li><a style="color: aliceblue; text-decoration: none ;"  href="timelines.html"><b>Timelines</b></a></li>
+                <li><a style="color: aliceblue; text-decoration: none ;" href="domain.html"><b>Domain</b></a></li>
+                <li><a style="color: aliceblue; text-decoration: none ;"href="project_overview.html"><b>All Projects</b></a></li>
+                <li><a style="color: aliceblue; text-decoration: none ;" href="project.html"><b>Project</b></a></li>
+                <li><a style="color: aliceblue; text-decoration: none ;"href='groupmate_data.html'><b>Group Mate Data</b></a></li> 
+            </ul>
+        </div>
+    </nav>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Major Project Management</h1>
+            <p>Organize, track, and manage your Major projects effectively.</p>
+            <a href="#project" class="cta-button">Get Started</a>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">
+        <section class="content">
+            <h2>Project Overview</h2>
+            <p>Details about various projects, including group number, project ID, titles, descriptions, guides, and tags.</p>
+
+            <!-- Project Table -->
+            <table>
+                <thead>
+                    <tr>
+                        <th>Project ID</th>
+                        <th>Group Number</th>
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>Guide</th>
+                        <th>Tags</th>
+                        <th>Working Model</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php if ($result->num_rows > 0): ?>
+                        <?php while ($row = $result->fetch_assoc()): ?>
+                            <tr>
+                                <td>
+                                    <a href="project_details.php?id=<?php echo htmlspecialchars($row['id']); ?>">
+                                        <?php echo htmlspecialchars($row['id']); ?>
+                                    </a>
+                                </td>
+                                <td><?php echo htmlspecialchars($row['group_number']); ?></td>
+                                <td><?php echo htmlspecialchars($row['title']); ?></td>
+                                <td><?php echo htmlspecialchars($row['description']); ?></td>
+                                <td><?php echo htmlspecialchars($row['guide']); ?></td>
+                                <td><?php echo htmlspecialchars($row['tags']); ?></td>
+                                <td>
+                                    <?php if (!empty($row['working_model'])): ?>
+                                        <a href="<?php echo htmlspecialchars($row['working_model']); ?>" class="download-link" target="_blank">View Model</a>
+                                    <?php else: ?>
+                                        No Model Available
+                                    <?php endif; ?>
+                                </td>
+                            </tr>
+                        <?php endwhile; ?>
+                    <?php else: ?>
+                        <tr><td colspan="7">No projects found.</td></tr>
+                    <?php endif; ?>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            &copy; <?php echo date("Y"); ?> Course Project Management. All rights reserved.
+        </footer>
+    </div> <!-- End of container -->
+
+    <?php
+    $conn->close();
+    ?>
+    
+    <script>
+        // JavaScript function to toggle the mobile menu
+        function toggleMenu() {
+            const menu = document.querySelector('.nav-links-mobile');
+            menu.classList.toggle('active');
+        }
+    </script>
+
+</body>
+</html>

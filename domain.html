@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Domain - Major Project Management</title>
+    <link rel="stylesheet" href="domain.css"> <!-- Linking CSS file -->
+    <style>
+        /* Custom CSS for the search bar */
+        
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="container">
+            <div class="logo">
+                <a href="CP.HTML">Major Project Management</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="timelines.html">Timelines</a></li>
+                <li><a href="domain.html">Domain</a></li>
+                <li><a href="project_overview.html">All Projects</a></li>
+                <li><a href="project.html">Project</a></li>
+                <li><a href="groupmate_data.html">Group Mate Data</a></li>
+            </ul>
+            
+            <!-- Search bar -->
+          
+            <!-- Hamburger Menu for Mobile -->
+            <button class="hamburger" onclick="toggleMenu()">&#9776;</button>
+
+            <!-- Mobile Navigation Links -->
+            <ul class="nav-links-mobile">
+                <li><a style="color: aliceblue; text-decoration: none ;"  href="timelines.html"><b>Timelines</b></a></li>
+                <li><a style="color: aliceblue; text-decoration: none ;" href="domain.html"><b>Domain</b></a></li>
+                <li><a style="color: aliceblue; text-decoration: none ;"href="project_overview.html"><b>All Projects</b></a></li>
+                <li><a style="color: aliceblue; text-decoration: none ;" href="project.html"><b>Project</b></a></li>
+                <li><a style="color: aliceblue; text-decoration: none ;"href='groupmate_data.html'><b>GroupMate Data</b></a></li> 
+            </ul>
+        </div>
+    </nav>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Engineering Project Domains</h1>
+            <p>Explore various domains relevant to engineering projects.</p>
+            <a href="#project" class="cta-button">Get Started</a>
+        </div>
+    </section>
+
+    <!-- Domain Section -->
+    <section class="content">
+        
+        
+
+        <!-- Grid of Domains -->
+        <div class="domain-grid">
+            <div class="domain-box">Image Processing</div>
+            <div class="domain-box">Internet of Things (IoT)</div>
+            <div class="domain-box">Embedded Systems</div>
+            <div class="domain-box">Data Mining</div>
+            <div class="domain-box">Big Data</div>
+            <div class="domain-box">Cloud Computing</div>
+            <div class="domain-box">Machine Learning</div>
+            <div class="domain-box">Cybersecurity</div>
+            <a href="project_overview.html" class="domain-box">All Projects</a>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Major Project Management. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript for toggling mobile menu -->
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('.nav-links-mobile');
+            menu.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timelines - Major Project Management</title>
+    <link rel="stylesheet" href="CP.CSS">
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<nav>
+    <div class="container">
+        <div class="logo">
+            <a href="CP.HTML">Major Project Management</a>
+        </div>
+
+        <!-- Hamburger Menu for Mobile -->
+        <button class="hamburger" onclick="toggleMenu()">&#9776;</button>
+
+        <!-- Desktop Navigation Links -->
+        <ul class="nav-links">
+            <li><a href="timelines.html">Timelines</a></li>
+            <li><a href="domain.html">Domain</a></li>
+            <li><a href="project_overview.html">All Projects</a></li>
+            <li><a href="project.html">My Project</a></li>
+            <li><a href='groupmate_data.html'>Group Mate Data</a></li> 
+        </ul>
+
+        <!-- Mobile Navigation Links -->
+        <ul class="nav-links-mobile">
+            <li><a style="color: aliceblue; text-decoration: none ;"  href="timelines.html"><b>Timelines</b></a></li>
+            <li><a style="color: aliceblue; text-decoration: none ;" href="domain.html"><b>Domain</b></a></li>
+            <li><a style="color: aliceblue; text-decoration: none ;"href="project_overview.html"><b>All Projects</b></a></li>
+            <li><a style="color: aliceblue; text-decoration: none ;" href="project.html"><b>Project</b></a></li>
+            <li><a style="color: aliceblue; text-decoration: none ;"href='groupmate_data.html'><b>Group Mate Details</b></a></li>  
+        </ul>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>Timelines</h1>
+        <p>Keep track of your project deadlines and milestones here.</p>
+    </div>
+</section>
+
+<!-- Main Content -->
+<section class="content">
+    <div class="timeline">
+        <h2>Project Timeline</h2>
+        <p>Here's where you can see your project timelines.</p>
+        <!-- Example Timeline Entries -->
+        <div class="timeline-entry">
+            <h3>Project Kick-off</h3>
+            <p>Date: <strong>March 1, 2024</strong></p>
+            <p>Description: Start of the project with initial team meeting.</p>
+        </div>
+        <div class="timeline-entry">
+            <h3>Phase 1 Completion</h3>
+            <p>Date: <strong>April 15, 2024</strong></p>
+            <p>Description: Complete the first phase of the project.</p>
+        </div>
+        <div class="timeline-entry">
+            <h3>Final Review</h3>
+            <p>Date: <strong>May 30, 2024</strong></p>
+            <p>Description: Review project outcomes and document results.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Include JavaScript -->
+<script src="search.js"></script>
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2024 Course Project Management. All rights reserved.</p>
+</footer>
+
+<script>
+// JavaScript function to toggle the mobile menu
+function toggleMenu() {
+    const menu = document.querySelector('.nav-links-mobile');
+    menu.classList.toggle('active');
+}
+</script>
+
+</body>
+</html>
